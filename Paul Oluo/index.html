@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This page shows all contents of this website">
+        <meta name="author" content="Paul Oluoch">
+        <title>Document</title>
+        <link rel="icon" href="" type="image/x-icon">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="logo-container">
+                    <h1 class="logo">DewTravels</h1>
+                </div>
+                
+                <div class="menu-container">
+                    <nav aria-label="primary-nav"></nav>
+                    <ul class="menu-list">
+                        <li class="menu-list-item active">
+                           <a href="index.html">Home</a>
+                        </li>
+                       
+                        <li class="menu-list-item">
+                            <abbr title="Locate Your Ride">
+                                <a href="mapping.html">Find</a>
+                            </abbr>
+                        </li>
+                        <li class="menu-list-item">
+                           <a href="bookings.html" >Popular</a>
+                        </li>
+                        <li class="menu-list-item">
+                            <a href="about.html" >Trends</a>
+                        </li>
+                        <li class="menu-list-item">
+                            <a href="location.html" >Location</a>
+                        </li>
+                        
+                        <li>
+                            <div class="menu-list-item-Login">
+                                <button onclick="toggleMenu()" class="login-button">Login</button>
+                                <div class="hidden-menu">   
+                                    <div class="hidden-menu-ttl">
+                                       <h2>Enter Your Credentials</h2> 
+                                    </div>   
+                                    <form action="https://httpbin.org/get" method="get">
+                                        <fieldset>
+                                            <legend>Personal Info</legend>
+                                            <p>
+                                                <label for="firstName">First Name:</label>
+                                                <input type="text" name="firstName" id="firstName" placeholder="Jane" autocomplete="on" required
+                                                    autofocus>
+                                            </p>
+                                            <p>
+                                                <label for="lastName">Last Name:</label>
+                                                <input type="text" name="lastName" id="lastName" placeholder="Doe" autocomplete="on" required>
+                                            </p>
+                                            <p>
+                                                <label for="email">Email:</label>
+                                                <input type="email" name="email" id="email" placeholder="example@example.com" autocomplete="on" required>
+                                            </p>
+                                            <p>
+                                                <label for="password">Password:</label>
+                                                <input type="password" name="password" id="password" placeholder="your secret" required>
+                                            </p>
+                                            <p>
+                                                <label for="phone">Phone:</label>
+                                                <input type="tel" name="phone" id="phone" placeholder="5555555555"
+                                                    pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                                            </p>
+                                           <br>
+                                         
+                                        <fieldset>
+                                            <legend>Role</legend>
+                                            <p>
+                                                <input type="radio" name="role" id="driver" value="Driver">
+                                                <label for="driver">Driver</label>
+                                            </p>
+                                            <p>
+                                                <input type="radio" name="role" id="passanger" value="passanger">
+                                                <label for="passanger">passanger</label>
+                                            </p>
+                                            <p>
+                                                <input type="radio" name="role" id="otDave" value="otDave">
+                                                <label for="otDave">OtDave</label>
+                                            </p>
+                                        </fieldset>
+                                        <br>
+                                        <button type="submit">Submit</button>
+                                        <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Post</button>
+                                        <button type="reset">Reset</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                
+                </div>
+                <div class="profile-container">
+                    <img class="profile-picture" src="images/profile.jpg" alt="">
+                    <div class="profile-text-container">
+                        <span class="profile-text">Profile</span>
+                        <i class="fas fa-caret-down"></i>
+                    </div>
+                    <div class="toggle">
+                        <i class="fas fa-moon toggle-icon"></i>
+                        <i class="fas fa-sun toggle-icon"></i>
+                        <div class="toggle-ball"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <nav aria-label="sec-nav"></nav>
+            <i class="left-menu-icon fas fa-search"></i>
+            <i class="left-menu-icon fas fa-home"></i>
+            <i class="left-menu-icon fas fa-users"></i>
+            <i class="left-menu-icon fas fa-bookmark"></i>
+            <i class="left-menu-icon fas fa-tv"></i>
+            <i class="left-menu-icon fas fa-hourglass-start"></i>
+            <i class="left-menu-icon fas fa-shopping-cart"></i>
+        </div>
+        <div class="container">
+            <div class="content-container">
+                <div class="featured-content"
+                    style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('images/car.jpg');">
+                    <img class="featured-title" src="images/mikebirdy.jpg" alt="">
+                    <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
+                        deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
+                        minima voluptatibus incidunt. Accusamus, provident.</p>
+                    <button class="featured-button">Book</button>
+                </div>
+            </div>
+            <div class="car-list-container">
+                <h1 class="car-list-title">Rides Near You</h1>
+                <div class="car-list-wrapper">
+                    <div class="car-list">
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/svilans.jpg" alt="">
+                            <span class="car-list-item-title">Sean</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Fin</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/bmw-1216469_640.jpg" alt="">
+                            <span class="car-list-item-title">Aven</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            
+            <div class="car-list-container">
+                <h1 class="car-list-title">Rides for Travel</h1>
+                <div class="car-list-wrapper">
+                    <div class="car-list">
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/svilans.jpg" alt="">
+                            <span class="car-list-item-title">Star</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Fin</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/bmw-1216469_640.jpg" alt="">
+                            <span class="car-list-item-title">Aven</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Tom</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+
+            <div class="car-list-container">
+                <h1 class="car-list-title" id="third">Book Rides For Later</h1>
+                <div class="car-list-wrapper">
+                    <div class="car-list">
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/brett.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/mikebirdy.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/svilans.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/bmw-1216469_640.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/svilans.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                        <div class="car-list-item">
+                            <img class="car-list-item-img" src="images/trace.jpg" alt="">
+                            <span class="car-list-item-title">Dave</span>
+                            <p class="car-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="car-list-item-button">Book</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+        </div>
+    
+     
+</div>
+<script src="main.js"></script>
+
+   </body>
+</html>
